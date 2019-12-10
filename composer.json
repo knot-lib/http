@@ -1,0 +1,35 @@
+{
+  "name": "knot-lib/http",
+  "description": "HTTP support library for kNot framework.",
+  "keywords": ["PHP","PHP7","kNot framework","HTTP"],
+  "homepage": "https://github.com/knot-lib/http",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Katsuki Shuto",
+      "email": "stk2k@knot-framework.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "ext-json": "*",
+    "knot-lib/kernel": "~0.1",
+    "knot-lib/services": "~0.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.3.0",
+    "php-coveralls/php-coveralls": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "KnotLib\\Http\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "KnotLib\\Http\\Test\\": "test/include/",
+      "KnotLib\\Http\\Demo\\": "demo/include/"
+    }
+  }
+}
