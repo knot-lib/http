@@ -1,13 +1,16 @@
 <?php
+declare(strict_types=1);
+
 namespace KnotLib\Http\Middleware;
+
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 
 use KnotLib\Kernel\Kernel\ApplicationInterface;
 use KnotLib\Kernel\EventStream\Channels;
 use KnotLib\Kernel\EventStream\Events;
-use KnotLib\Kernel\Pipeline\MiddlewareInterface;
-use KnotLib\Kernel\Request\RequestInterface;
-use KnotLib\Kernel\Request\RequestHandlerInterface;
-use KnotLib\Kernel\Response\ResponseInterface;
 
 class WebServerRoutingMiddleware implements MiddlewareInterface
 {
@@ -27,12 +30,12 @@ class WebServerRoutingMiddleware implements MiddlewareInterface
     /**
      * Process middleware
      *
-     * @param RequestInterface $request
+     * @param ServerRequestInterface $request
      * @param RequestHandlerInterface $handler
      *
      * @return ResponseInterface
      */
-    public function process(RequestInterface $request, RequestHandlerInterface $handler)
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler) : ResponseInterface
     {
         $url    = $_SERVER['REQUEST_URI'] ?? '';
         $method = $_SERVER['REQUEST_METHOD'] ?? '';

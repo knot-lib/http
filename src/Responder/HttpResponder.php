@@ -1,10 +1,12 @@
 <?php
+declare(strict_types=1);
+
 namespace KnotLib\Http\Responder;
 
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 
 use KnotLib\Kernel\Responder\ResponderInterface;
-use KnotLib\Kernel\Response\ResponseInterface;
 use KnotLib\Http\Exception\HeadersAlreadySentException;
 
 class HttpResponder implements ResponderInterface
