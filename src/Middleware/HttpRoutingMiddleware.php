@@ -12,7 +12,7 @@ use KnotLib\Kernel\Kernel\ApplicationInterface;
 use KnotLib\Kernel\EventStream\Channels;
 use KnotLib\Kernel\EventStream\Events;
 
-class WebServerRoutingMiddleware implements MiddlewareInterface
+class HttpRoutingMiddleware implements MiddlewareInterface
 {
     /** @var ApplicationInterface */
     private $app;
