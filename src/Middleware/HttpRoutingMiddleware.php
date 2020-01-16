@@ -40,6 +40,8 @@ class HttpRoutingMiddleware implements MiddlewareInterface
         $url    = $_SERVER['REQUEST_URI'] ?? '';
         $method = $_SERVER['REQUEST_METHOD'] ?? '';
 
+        $this->app->response($handler->handle($request));
+
         $this->app->router()->route($url, $method, function(string $path, array $vars, string $route_name){
 
             // fire event
@@ -51,6 +53,6 @@ class HttpRoutingMiddleware implements MiddlewareInterface
 
         });
 
-        return $handler->handle($request);
+        return $this->app->response();
     }
 }
