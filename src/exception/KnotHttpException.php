@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\Http\Exception;
+namespace knotlib\http\exception;
 
 use Throwable;
 
-use KnotLib\Exception\KnotPhpException;
+use knotlib\exception\KnotPhpException;
 
 class KnotHttpException extends KnotPhpException implements HttpExceptionInterface
 {
@@ -13,10 +13,9 @@ class KnotHttpException extends KnotPhpException implements HttpExceptionInterfa
      * construct
      *
      * @param string $message
-     * @param int $code
      * @param Throwable|null $prev
      */
-    public function __construct(string $message, int $code = 0, Throwable $prev = null){
-        parent::__construct($message, $code, $prev);
+    public function __construct(string $message, Throwable $prev = null){
+        parent::__construct($message, 0, $prev);
     }
 }

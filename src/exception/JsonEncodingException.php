@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotLib\Http\Exception;
+namespace knotlib\http\exception;
 
 use Throwable;
 
 class JsonEncodingException extends KnotHttpException
 {
     /** @var int */
-    private $error_code;
+    private $json_error;
 
     /**
      * construct
@@ -20,6 +20,14 @@ class JsonEncodingException extends KnotHttpException
         $message = "json_encode failed: " . json_last_error_msg();
         parent::__construct($message, $code, $prev);
 
-        $this->error_code = json_last_error();
+        $this->json_error = json_last_error();
+    }
+
+    /**
+     * @return int
+     */
+    public function getJsonError() : int
+    {
+        return $this->json_error;
     }
 }

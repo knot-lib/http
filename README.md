@@ -21,7 +21,7 @@ HTTP support library for kNot framework.
 
 ## Requirement
 
-PHP 7.1 or later
+PHP 7.2 or later
 
 ## Installing knot-lib/http
 

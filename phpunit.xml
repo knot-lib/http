@@ -15,10 +15,10 @@
          stopOnIncomplete="false"
          stopOnSkipped="false"
          stopOnRisky="false"
-         bootstrap="test/bootstrap.php"
+         bootstrap="vendor/autoload.php"
 >
     <testsuites>
-        <testsuite name="Calgamo/Http Tests">
+        <testsuite name="knot-lib/http Tests">
             <directory>test</directory>
         </testsuite>
     </testsuites>
@@ -27,7 +27,7 @@
         <whitelist>
             <directory suffix=".php">./src</directory>
             <exclude>
-                <directory>./sample</directory>
+                <directory>./test</directory>
                 <directory>./vendor</directory>
                 <directory suffix="Interface.php">./src</directory>
             </exclude>

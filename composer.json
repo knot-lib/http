@@ -12,25 +12,24 @@
     }
   ],
   "require": {
-    "php": ">=7.1",
+    "php": ">=7.2",
     "ext-json": "*",
     "psr/http-server-middleware": "^1.0",
-    "knot-lib/kernel": "~0.1",
-    "knot-lib/services": "~0.1"
+    "knot-lib/kernel": "~0.8",
+    "knot-lib/services": "~0.4"
   },
   "require-dev": {
-    "phpunit/phpunit": "^6.3.0",
+    "phpunit/phpunit": "^8.5.15",
     "php-coveralls/php-coveralls": "^2.0"
   },
   "autoload": {
     "psr-4": {
-      "KnotLib\\Http\\": "src/"
+      "knotlib\\http\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "KnotLib\\Http\\Test\\": "test/include/",
-      "KnotLib\\Http\\Demo\\": "demo/include/"
+      "knotlib\\http\\test\\": "test/"
     }
   }
 }
